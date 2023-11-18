@@ -13,5 +13,10 @@ namespace Araba.Controllers
         {
             return View();
         }
+        public ActionResult Detay()
+        {
+            return View();
+        }
+
     }
 }
