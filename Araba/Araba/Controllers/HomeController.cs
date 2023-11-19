@@ -27,5 +27,12 @@ namespace Araba.Controllers
             ViewBag.imgs = imgs;
             return View(ilan);
         }
+        public PartialViewResult Slider()
+        {
+            var ilan = db.Ilans.ToList().Take(5);
+            var imgs = db.Resims.ToList();
+            ViewBag.imgs = imgs;
+            return PartialView(ilan);
+        }
     }
 }
