@@ -35,6 +35,14 @@ namespace Araba.Identity
                 manager.AddToRole(user.Id, "admin");
                 manager.AddToRole(user.Id, "user");
             }
+            if (!context.Users.Any(i => i.Name == "tuanakas"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser() { Name = "tuana", Surname = "kas", UserName = "tuanakas", Email = "tuanakas@gmail.com" };
+                manager.Create(user, "123456");
+                manager.AddToRole(user.Id, "user");
+            }
 
             base.Seed(context);
         }

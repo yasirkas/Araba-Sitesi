@@ -1,0 +1,51 @@
+﻿<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    @if (Request.IsAuthenticated)
+    {
+        if (this.User.IsInRole("admin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Admin/Index">Admin Paneli</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Ilan/Index">@User.Identity.Name</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Account/Profil">Profilim</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="btn btn-danger" aria-current="page" href="/Account/LogOut"><i class="bi bi-x-circle-fill"></i> Çıkış Yap</a>
+                <a class="btn btn-warning" aria-current="page" href="/Ilan/Create"><i class="bi bi-pencil"></i> İlan Ver</a>
+
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Ilan/Index">@User.Identity.Name</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Account/Profil">Profilim</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="btn btn-danger" aria-current="page" href="/Account/LogOut"><i class="bi bi-x-circle-fill"></i> Çıkış Yap</a>
+                <a class="btn btn-warning" aria-current="page" href="/Ilan/Create"><i class="bi bi-pencil"></i> İlan Ver</a>
+
+            </li>
+        }
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="btn btn-info" aria-current="page" href="/Account/Register"><i class="bi bi-person-circle"></i> Üye Ol</a>
+            <a class="btn btn-success" aria-current="page" href="/Account/Login"><i class="bi bi-box-arrow-in-right"></i> Giriş Yap</a>
+            <a class="btn btn-warning" aria-current="page" href="/Account/Login"><i class="bi bi-pencil"></i> İlan Ver</a>
+
+        </li>
+    }
+
+</ul>
