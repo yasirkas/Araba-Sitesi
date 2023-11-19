@@ -2,6 +2,7 @@
 using Araba.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,44 @@ namespace Araba.Controllers
             }
             return View(model);
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(Login model,string ReturnUrl)
+        {
+            if(ModelState.IsValid)
+            {
+                var user = UserManager.Find(model.Username, model.Password);
+                if (user != null)
+                {
+                    var authManager = HttpContext.GetOwinContext().Authentication;
+                    var identityclaims = UserManager.CreateIdentity(user, "ApplicationCookie");
+                    var authProperties = new AuthenticationProperties();
+                    authProperties.IsPersistent = model.RememberMe;
+                    authManager.SignIn(authProperties, identityclaims);
+                    if (!String.IsNullOrEmpty(ReturnUrl))
+                    {
+                        return Redirect(ReturnUrl);
+                    }
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("LoginUserError", "Böyle bir kullanıcı yok");
+                }
+            }
+            return View(model);
+        }
+        public ActionResult LogOut()
+        {
+            var authManager = HttpContext.GetOwinContext().Authentication;
+            authManager.SignOut();
+            return RedirectToAction("Index","Home");
+        }
+
+
 
         // GET: Account
         public ActionResult Index()

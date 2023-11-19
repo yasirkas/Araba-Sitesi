@@ -168,6 +168,7 @@
     <Compile Include="Models\DataInitializer.cs" />
     <Compile Include="Models\Durum.cs" />
     <Compile Include="Models\Ilan.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Marka.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Register.cs" />
@@ -187,6 +188,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
