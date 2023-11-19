@@ -89,7 +89,32 @@ namespace Araba.Controllers
             authManager.SignOut();
             return RedirectToAction("Index","Home");
         }
-
+        //Get
+        public ActionResult Profil()
+        {
+            var id = HttpContext.GetOwinContext().Authentication.User.Identity.GetUserId();
+            var user = UserManager.FindById(id);
+            var data = new ProfilGuncelleme()
+            {
+                id = user.Id,
+                Name = user.Name,
+                Surname=user.Surname,
+                Email=user.Email,
+                Username=user.UserName
+            };
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult Profil(ProfilGuncelleme model)
+        {
+            var user = UserManager.FindById(model.id);
+            user.Name = model.Name;
+            user.Surname = model.Surname;
+            user.UserName = model.Username;
+            user.Email = model.Email;
+            UserManager.Update(user);
+            return View("Update");
+        }
 
 
         // GET: Account
