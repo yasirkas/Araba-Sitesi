@@ -115,6 +115,21 @@ namespace Araba.Controllers
             UserManager.Update(user);
             return View("Update");
         }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Authorize]
+        public ActionResult ChangePassword(SifreDegistirme model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = UserManager.ChangePassword(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+                return View("Update");
+            }
+            return View(model);
+        }
 
 
         // GET: Account

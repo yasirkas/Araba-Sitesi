@@ -178,6 +178,7 @@
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Resim.cs" />
     <Compile Include="Models\Sehir.cs" />
+    <Compile Include="Models\SifreDegistirme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +197,7 @@
     <Content Include="Views\Shared\LoginPartial.cshtml" />
     <Content Include="Views\Account\Profil.cshtml" />
     <Content Include="Views\Account\Update.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
