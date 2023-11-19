@@ -56,7 +56,7 @@ namespace Araba.Models
             context.SaveChanges();
             var ilan = new List<Ilan>()
             {
-                new Ilan() {MarkaId=1, Aciklama="Araba Temiz",IlanNo="A125",Fiyat=3000,Tarih="24/01/2022",Kilometre=10000,ModelYili=2012,YakitTuru="Benzin",VitesTuru="Düz Vites",DurumId=1,ModelId=1,Username="yaso",SehirId=1,Telefon="123123"},
+                new Ilan() {MarkaId=1, Aciklama="Araba Temiz",IlanNo="A125",Fiyat=3000,Tarih="24/01/2022",Kilometre=80000,ModelYili=2012,YakitTuru="Benzin",VitesTuru="Düz Vites",DurumId=1,ModelId=1,Username="yaso",SehirId=1,Telefon="123123"},
                 new Ilan() {MarkaId=3, Aciklama="Araba Temizdir, sıkıntısız",IlanNo="A150",Fiyat=7000,Tarih="21/01/2022",Kilometre=10000,ModelYili=2017,YakitTuru="LPG",VitesTuru="Düz Vites",DurumId=2,ModelId=4,Username="taso",SehirId=1,Telefon="666554"}
 
             };
