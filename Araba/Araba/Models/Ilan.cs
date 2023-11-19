@@ -7,6 +7,7 @@ namespace Araba.Models
 {
     public class Ilan
     {
+        public int IlanId { get; set; }
         public string IlanNo { get; set; }
         public string Aciklama { get; set; }
         public double Fiyat { get; set; }

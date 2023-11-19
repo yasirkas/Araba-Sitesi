@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Araba.Models.Ilan>
 @{
     ViewBag.Title = "Index";
 }
@@ -90,34 +90,34 @@
                 </div>
             </div>
         </div>
+        @foreach (var item in Model)
+        {
+            var c = 1;
+            <div class="col-md-3">
+                <br />
+                <!-- İlan Listesi-->
+                <div class="img-thumbnail">
+                    @foreach (var rsm in ViewBag.imgs)
+                    {
+                        if (rsm.IlanId == item.IlanId)
+                        {
+                            if (@c == 1)
+                            {
+                                <a href="/Home/Detay/@item.IlanId"><img src="/Content/images/@rsm.ResimAd" class="card-img-top" height="240" alt="..."></a>
+                                c++;
+                            }
 
 
-        <div class="col-md-3">
-            <br />
-            <!-- İlan Listesi-->
-            <div class="img-thumbnail">
-                <a href="#"><img src="/Content/images/q1.jpg" class="card-img-top" height="240" alt="..."></a>
-                <div class="card-body" style="text-align:center">
-                    <h6 class="card-title">Audi A5</h6>
-                    <h6 class="card-title" style="color:Highlight">Model Yılı: 2018 (105.000 KM)</h6>
-                    <h5 class="card-title" style="color:red"><b>2.275.000 TL</b></h5>
+                        }
+                    }
+                    <div class="card-body" style="text-align:center">
+                        <h6 class="card-title">@item.Model.Marka.MarkaAd (MODEL: @item.Model.ModelAd)</h6>
+                        <h6 class="card-title" style="color:Highlight">Model Yılı: @item.ModelYili (@item.Kilometre KM)</h6>
+                        <h5 class="card-title" style="color:red"><b>@item.Fiyat TL</b></h5>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-3">
-            <br />
-            <!-- İlan Listesi-->
-            <div class="img-thumbnail">
-                <a href="#"><img src="/Content/images/q2.jpg" class="card-img-top" height="240" alt="..."></a>
-                <div class="card-body" style="text-align:center">
-                    <h6 class="card-title">Audi A5</h6>
-                    <h6 class="card-title" style="color:Highlight">Model Yılı: 2018 (105.000 KM)</h6>
-                    <h5 class="card-title" style="color:red"><b>2.275.000 TL</b></h5>
-                </div>
-            </div>
-        </div>
+        }
 
     </div>
 </div>
-

@@ -67,7 +67,7 @@ namespace Araba.Models
             context.SaveChanges();
             var resim = new List<Resim>()
             {
-                new Resim() {ResimAd="a1.jpg",IlanId=1},
+                new Resim() {ResimAd="q1.jpg",IlanId=1},
                 new Resim() {ResimAd="q2.jpg",IlanId=1},
                 new Resim() {ResimAd="q2.jpg",IlanId=2}
             };
