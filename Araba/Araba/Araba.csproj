@@ -155,10 +155,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup1.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Identity\ApplicationRole.cs" />
+    <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\DataInitializer.cs" />
     <Compile Include="Models\Durum.cs" />
