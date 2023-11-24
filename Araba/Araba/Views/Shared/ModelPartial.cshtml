@@ -1,0 +1,8 @@
+﻿<option value="">Model Seç</option>
+@if (ViewBag.modellistesi!=null)
+{
+    foreach (var item in ViewBag.modellistesi)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}

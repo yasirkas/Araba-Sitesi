@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Ilan</h4>
         <hr />
@@ -106,16 +106,19 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MarkaId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MarkaId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MarkaId, "", new { @class = "text-danger" })
+                @if (ViewBag.markalist != null)
+                {
+                    @Html.DropDownListFor(m => m.MarkaId, ViewBag.markalist as SelectList, "Marka Seç", new { @class = "form-control" })
+                }
+
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.ModelId, "ModelId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ModelId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ModelId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.ModelId, new SelectList(""), "Model Seç", new { @class = "form-control" })
+
             </div>
         </div>
 
@@ -139,6 +142,28 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#MarkaId").change(function () {
+            var markaid = $(this).val();
+            debugger
+            $.ajax({
+                type: "Post",
+                url: "/Ilan/ModelGetir?MarkaId=" + markaid,
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $("#ModelId").empty();
+                    $("#ModelId").append(response);
+                }
+            })
+        })
+    })
+</script>
