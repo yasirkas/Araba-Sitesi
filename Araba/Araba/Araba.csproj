@@ -167,6 +167,7 @@
     <Compile Include="Controllers\DurumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarkaController.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\SehirController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,6 +222,11 @@
     <Content Include="Views\Marka\Details.cshtml" />
     <Content Include="Views\Marka\Edit.cshtml" />
     <Content Include="Views\Marka\Index.cshtml" />
+    <Content Include="Views\Model\Create.cshtml" />
+    <Content Include="Views\Model\Delete.cshtml" />
+    <Content Include="Views\Model\Details.cshtml" />
+    <Content Include="Views\Model\Edit.cshtml" />
+    <Content Include="Views\Model\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
