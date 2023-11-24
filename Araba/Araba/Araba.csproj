@@ -164,6 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup1.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DurumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SehirController.cs" />
     <Compile Include="Global.asax.cs">
@@ -209,6 +210,11 @@
     <Content Include="Views\Sehir\Details.cshtml" />
     <Content Include="Views\Sehir\Edit.cshtml" />
     <Content Include="Views\Sehir\Index.cshtml" />
+    <Content Include="Views\Durum\Create.cshtml" />
+    <Content Include="Views\Durum\Delete.cshtml" />
+    <Content Include="Views\Durum\Details.cshtml" />
+    <Content Include="Views\Durum\Edit.cshtml" />
+    <Content Include="Views\Durum\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
