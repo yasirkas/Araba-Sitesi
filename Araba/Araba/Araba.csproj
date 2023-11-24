@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DurumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IlanController.cs" />
     <Compile Include="Controllers\MarkaController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\SehirController.cs" />
@@ -227,6 +228,11 @@
     <Content Include="Views\Model\Details.cshtml" />
     <Content Include="Views\Model\Edit.cshtml" />
     <Content Include="Views\Model\Index.cshtml" />
+    <Content Include="Views\Ilan\Create.cshtml" />
+    <Content Include="Views\Ilan\Delete.cshtml" />
+    <Content Include="Views\Ilan\Details.cshtml" />
+    <Content Include="Views\Ilan\Edit.cshtml" />
+    <Content Include="Views\Ilan\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

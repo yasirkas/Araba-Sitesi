@@ -1,0 +1,130 @@
+﻿@model Araba.Models.Ilan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ilan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Durum.DurumAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Durum.DurumAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.ModelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.ModelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sehir.SehirAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sehir.SehirAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlanNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlanNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kilometre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kilometre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYili)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYili)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YakitTuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YakitTuru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VitesTuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VitesTuru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkaId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IlanId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

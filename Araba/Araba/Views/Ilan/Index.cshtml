@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Araba.Models.Ilan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Durum.DurumAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model.ModelAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehir.SehirAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kilometre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModelYili)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakitTuru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VitesTuru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkaId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durum.DurumAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model.ModelAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehir.SehirAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IlanNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kilometre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModelYili)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakitTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VitesTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarkaId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IlanId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IlanId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IlanId })
+        </td>
+    </tr>
+}
+
+</table>
