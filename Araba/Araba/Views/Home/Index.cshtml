@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Araba.Models.Ilan>
+﻿@model PagedList<Araba.Models.Ilan>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
@@ -9,8 +11,8 @@
         <!-- Slider -->
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                
-            @Html.Action("Slider","Home")
+
+                @Html.Action("Slider", "Home")
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -26,8 +28,8 @@
         <div class="col-md-3">
             <br>
             <!-- Filtreleme Kısmı -->
-            @Html.Action("PartialFiltre","Home")
-            
+            @Html.Action("PartialFiltre", "Home")
+
         </div>
         @foreach (var item in Model)
         {
@@ -57,6 +59,7 @@
                 </div>
             </div>
         }
+        @Html.PagedListPager(Model, sayi => Url.Action("Index", new { sayi}))
 
     </div>
 </div>

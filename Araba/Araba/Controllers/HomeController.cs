@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Araba.Models;
 using System.Data.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 
 namespace Araba.Controllers
@@ -13,11 +15,11 @@ namespace Araba.Controllers
     {
         DataContext db = new DataContext();
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(int sayi=1)
         {
             var imgs = db.Resims.ToList();
             ViewBag.imgs = imgs;
-            var ilan = db.Ilans.Include(m => m.Model).ToList();
+            var ilan = db.Ilans.Include(m => m.Model).ToList().ToPagedList(sayi,3);
             return View(ilan);
         }
         public ActionResult MenuFiltre(int id)
