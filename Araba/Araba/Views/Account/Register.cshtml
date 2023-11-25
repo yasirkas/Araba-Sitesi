@@ -53,14 +53,14 @@
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Şifre :</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.PasswordFor(m => m.Password, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Şifre Tekrar :</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(m => m.RePassword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.PasswordFor(m => m.RePassword, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(m => m.RePassword, "", new { @class = "text-danger" })
                         </div>
                     </div>
