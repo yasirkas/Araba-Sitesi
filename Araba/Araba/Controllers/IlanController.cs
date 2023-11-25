@@ -18,7 +18,8 @@ namespace Araba.Controllers
         // GET: Ilan
         public ActionResult Index()
         {
-            var ilans = db.Ilans.Include(i => i.Durum).Include(i => i.Model).Include(i => i.Sehir);
+            var username = User.Identity.Name;
+            var ilans = db.Ilans.Where(i=>i.Username==username).Include(i => i.Durum).Include(i => i.Model).Include(i => i.Sehir);
             return View(ilans.ToList());
         }
         public List<Marka> MarkaGetir()
@@ -111,6 +112,7 @@ namespace Araba.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.markalist = new SelectList(MarkaGetir(), "MarkaId", "MarkaAd");
             ViewBag.DurumId = new SelectList(db.Durums, "DurumId", "DurumAd", ilan.DurumId);
             ViewBag.ModelId = new SelectList(db.Models, "ModelId", "ModelAd", ilan.ModelId);
             ViewBag.SehirId = new SelectList(db.Sehirs, "SehirId", "SehirAd", ilan.SehirId);
@@ -131,7 +133,7 @@ namespace Araba.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.DurumId = new SelectList(db.Durums, "DurumId", "DurumAd", ilan.DurumId);
-            ViewBag.ModelId = new SelectList(db.Models, "ModelId", "ModelAd", ilan.ModelId);
+            ViewBag.markalist = new SelectList(MarkaGetir(), "MarkaId", "MarkaAd");
             ViewBag.SehirId = new SelectList(db.Sehirs, "SehirId", "SehirAd", ilan.SehirId);
             return View(ilan);
         }

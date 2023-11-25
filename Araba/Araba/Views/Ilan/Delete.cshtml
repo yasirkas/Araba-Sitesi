@@ -4,133 +4,100 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container">
+    <h3>Bu ilanı silmek istediğinizden emin misiniz?</h3>
+    <div>
+        <dl class="dl-horizontal">
+            
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Ilan</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Durum.DurumAd)
-        </dt>
+            <dt>
+                İlan No
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Durum.DurumAd)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IlanNo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Model.ModelAd)
-        </dt>
+            <dt>
+                Açıklama
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Model.ModelAd)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sehir.SehirAd)
-        </dt>
+            <dt>
+                Fiyat
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sehir.SehirAd)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IlanNo)
-        </dt>
+            <dt>
+                Tarih
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IlanNo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Aciklama)
-        </dt>
+            <dt>
+               Kilometre
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Aciklama)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Kilometre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fiyat)
-        </dt>
+            <dt>
+                Model Yılı
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fiyat)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ModelYili)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tarih)
-        </dt>
+            <dt>
+                Yakıt Türü
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tarih)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.YakitTuru)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Kilometre)
-        </dt>
+            <dt>
+                Vites Türü
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Kilometre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.VitesTuru)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModelYili)
-        </dt>
+            
 
-        <dd>
-            @Html.DisplayFor(model => model.ModelYili)
-        </dd>
+            <dt>
+                Telefon
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.YakitTuru)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Telefon)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.YakitTuru)
-        </dd>
+           
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VitesTuru)
-        </dt>
+        </dl>
 
-        <dd>
-            @Html.DisplayFor(model => model.VitesTuru)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefon)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MarkaId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MarkaId)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Sil</button>
+            <a href="/Ilan/Index" class="btn btn-warning"><i class="bi bi-file-earmark"></i> İlan Listesi</a>
         </div>
-    }
+        }
+    </div>
 </div>
+
+
