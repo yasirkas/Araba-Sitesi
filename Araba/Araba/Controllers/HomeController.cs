@@ -15,11 +15,11 @@ namespace Araba.Controllers
     {
         DataContext db = new DataContext();
         // GET: Home
-        public ActionResult Index(int sayi=1)
+        public ActionResult Index(int sayfa=1)
         {
             var imgs = db.Resims.ToList();
             ViewBag.imgs = imgs;
-            var ilan = db.Ilans.Include(m => m.Model).ToList().ToPagedList(sayi,3);
+            var ilan = db.Ilans.Include(m => m.Model).ToList().ToPagedList(sayfa,3);
             return View(ilan);
         }
         public ActionResult MenuFiltre(int id)
