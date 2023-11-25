@@ -7,18 +7,17 @@
         <div class="row">
             <div class="col-md-8">
                 <div id="carouselExampleIndicators" class="carousel slide">
-                    
+
                     <div class="carousel-inner">
                         @{ int i = 0;}
                         @foreach (var item in ViewBag.imgs)
-                                {
-                                    i++;
-                                    var active = i == 1 ? "active" : "";
+                        {
+                            i++;
+                            var active = i == 1 ? "active" : "";
                             <div class="carousel-item @active">
-                                <img src="/Content/images/@item.ResimAd" class="d-block w-100" alt="" height="500" style="border-radius: 20px">
+                                <img src="/Content/images/@item.ResimAd" class="d-block w-100" alt="" height="382" style="border-radius: 20px">
                             </div>
                         }
-
 
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -29,13 +28,21 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+                    <br />
+                    <div class="card">
+                        <h5 class="card-header">İlan Açıklama</h5>
+                        <div class="card-body">
+                            <p class="card-text">@Model.Aciklama</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- Slider -->
             <div class="col-md-4">
                 <table class="table table-bordered table-striped">
                     <tbody>
-                        <tr><th colspan="2">İlan Özellikleri</th></tr>
+                        <tr><th colspan="2" style="color:royalblue">@Model.Fiyat ₺</th></tr>
                         <tr><td><strong>İlan No</strong></td><td>@Model.IlanNo</td></tr>
                         <tr><td><strong>Şehir</strong></td><td>@Model.Sehir.SehirAd</td></tr>
                         <tr><td><strong>Durum</strong></td><td>@Model.Durum.DurumAd</td></tr>
@@ -46,8 +53,6 @@
                         <tr><td><strong>Kilometre</strong></td><td>@Model.Kilometre</td></tr>
                         <tr><td><strong>Yakıt Türü</strong></td><td>@Model.YakitTuru</td></tr>
                         <tr><td><strong>Vites Türü</strong></td><td>@Model.VitesTuru</td></tr>
-                        <tr><td><strong>Açıklama</strong></td><td>@Model.Aciklama</td></tr>
-                        <tr><td><strong>Fiyat</strong></td><td style="font-size:18px; color:indigo">@Model.Fiyat ₺</td></tr>
                         <tr><td><strong>Telefon</strong></td><td><label class="btn btn-success btn-block"><i class="bi bi-telephone-fill"></i> @Model.Telefon</label></td></tr>
                     </tbody>
                 </table>    
