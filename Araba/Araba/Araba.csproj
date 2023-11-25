@@ -136,9 +136,6 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\q1.jpg" />
     <Content Include="Content\images\q2.jpg" />
-    <Content Include="Content\images\slider\1.jpg" />
-    <Content Include="Content\images\slider\2.jpg" />
-    <Content Include="Content\images\slider\3.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -244,41 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\cars\audi\a3\" />
-    <Folder Include="Content\images\cars\audi\a4\" />
-    <Folder Include="Content\images\cars\audi\a5\" />
-    <Folder Include="Content\images\cars\audi\rs\" />
-    <Folder Include="Content\images\cars\bmw\320i\" />
-    <Folder Include="Content\images\cars\bmw\520d\" />
-    <Folder Include="Content\images\cars\bmw\520i\" />
-    <Folder Include="Content\images\cars\bmw\i8\" />
-    <Folder Include="Content\images\cars\fiat\500l i3\" />
-    <Folder Include="Content\images\cars\fiat\egea\" />
-    <Folder Include="Content\images\cars\fiat\linea\" />
-    <Folder Include="Content\images\cars\ford\focus\" />
-    <Folder Include="Content\images\cars\ford\mondeo\" />
-    <Folder Include="Content\images\cars\ford\mustang\" />
-    <Folder Include="Content\images\cars\ford\tourneo connect\" />
-    <Folder Include="Content\images\cars\hyundai\elantra\" />
-    <Folder Include="Content\images\cars\hyundai\i10\" />
-    <Folder Include="Content\images\cars\hyundai\i20\" />
-    <Folder Include="Content\images\cars\mercedes\a200\" />
-    <Folder Include="Content\images\cars\mercedes\c220\" />
-    <Folder Include="Content\images\cars\mercedes\cls\" />
-    <Folder Include="Content\images\cars\mercedes\e180\" />
-    <Folder Include="Content\images\cars\opel\astra\" />
-    <Folder Include="Content\images\cars\opel\corsa\" />
-    <Folder Include="Content\images\cars\opel\insignia\" />
-    <Folder Include="Content\images\cars\peugeot\206\" />
-    <Folder Include="Content\images\cars\peugeot\508\" />
-    <Folder Include="Content\images\cars\peugeot\rcz\" />
-    <Folder Include="Content\images\cars\renault\clio\" />
-    <Folder Include="Content\images\cars\renault\fluence\" />
-    <Folder Include="Content\images\cars\renault\megane\" />
-    <Folder Include="Content\images\cars\volvo\c40\" />
-    <Folder Include="Content\images\cars\volvo\c70\" />
-    <Folder Include="Content\images\cars\volvo\s40\" />
-    <Folder Include="Content\images\cars\volvo\s60\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
