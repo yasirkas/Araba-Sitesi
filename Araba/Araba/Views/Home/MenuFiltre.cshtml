@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Araba.Models.Ilan>
+@{
+    ViewBag.Title = "MenuFiltre";
+}
+
+<div class="container">
+    <br />
+
+    <div class="row">
+        <div class="col-md-3">
+            <br>
+            <!-- Filtreleme Kısmı -->
+            @Html.Action("PartialFiltre", "Home")
+
+        </div>
+        @foreach (var item in Model)
+        {
+            var c = 1;
+            <div class="col-md-3">
+                <br />
+                <!-- İlan Listesi-->
+                <div class="img-thumbnail">
+                    @foreach (var rsm in ViewBag.imgs)
+                    {
+                        if (rsm.IlanId == item.IlanId)
+                        {
+                            if (@c == 1)
+                            {
+                                <a href="/Home/Detay/@item.IlanId"><img src="/Content/images/@rsm.ResimAd" class="card-img-top" height="240" alt="..."></a>
+                                c++;
+                            }
+
+
+                        }
+                    }
+                    <div class="card-body" style="text-align:center">
+                        <h6 class="card-title">@item.Model.Marka.MarkaAd (MODEL: @item.Model.ModelAd)</h6>
+                        <h6 class="card-title" style="color:Highlight">Model Yılı: @item.ModelYili (@item.Kilometre KM)</h6>
+                        <h5 class="card-title" style="color:red"><b>@item.Fiyat TL</b></h5>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

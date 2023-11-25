@@ -19,6 +19,11 @@ namespace Araba.Controllers
         {
             return View(db.Durums.ToList());
         }
+        public PartialViewResult DurumList()
+        {
+            var durum = db.Durums.ToList();
+            return PartialView(durum);
+        }
 
         // GET: Durum/Details/5
         public ActionResult Details(int? id)

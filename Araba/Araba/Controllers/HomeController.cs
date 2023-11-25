@@ -20,6 +20,15 @@ namespace Araba.Controllers
             var ilan = db.Ilans.Include(m => m.Model).ToList();
             return View(ilan);
         }
+        public ActionResult MenuFiltre(int id)
+        {
+            var imgs = db.Resims.ToList();
+            ViewBag.imgs = imgs;
+            var filtre = db.Ilans.Where(i => i.DurumId == id).Include(m => m.Model).Include(m => m.Sehir).Include(m => m.Durum).ToList();
+
+            return View(filtre);
+        }
+
         public ActionResult Filtre(int min, int max, int sehirid, int durumid, int markaid, int modelid)
         {
             var imgs = db.Resims.ToList();

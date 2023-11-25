@@ -236,6 +236,8 @@
     <Content Include="Views\Shared\Arama.cshtml" />
     <Content Include="Views\Home\PartialFiltre.cshtml" />
     <Content Include="Views\Home\Filtre.cshtml" />
+    <Content Include="Views\Durum\DurumList.cshtml" />
+    <Content Include="Views\Home\MenuFiltre.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
