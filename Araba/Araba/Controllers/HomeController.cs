@@ -20,6 +20,36 @@ namespace Araba.Controllers
             var ilan = db.Ilans.Include(m => m.Model).ToList();
             return View(ilan);
         }
+        public ActionResult Filtre(int min, int max, int sehirid, int durumid, int markaid, int modelid)
+        {
+            var imgs = db.Resims.ToList();
+            ViewBag.imgs = imgs;
+            var filtre = db.Ilans.Where(i => i.Fiyat >= min
+             && i.Fiyat <= max
+             && i.SehirId == sehirid
+             && i.DurumId == durumid
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).ToList();
+            return View(filtre);
+        }
+        public PartialViewResult PartialFiltre()
+        {
+            ViewBag.markalist = new SelectList(MarkaGetir(), "MarkaId", "MarkaAd");
+            ViewBag.DurumId = new SelectList(db.Durums, "DurumId", "DurumAd");
+            ViewBag.SehirId = new SelectList(db.Sehirs, "SehirId", "SehirAd");
+            return PartialView();
+        }
+        public List<Marka> MarkaGetir()
+        {
+            List<Marka> markalar = db.Markas.ToList();
+            return markalar;
+        }
+        public ActionResult ModelGetir(int MarkaId)
+        {
+            List<Model> modellist = db.Models.Where(x => x.MarkaId == MarkaId).ToList();
+            ViewBag.modellistesi = new SelectList(modellist, "ModelId", "ModelAd");
+            return PartialView("ModelPartial");
+        }
         public ActionResult Search(string q)
         {
             var img = db.Resims.ToList();

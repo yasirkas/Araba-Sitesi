@@ -1,33 +1,17 @@
 ﻿@model IEnumerable<Araba.Models.Ilan>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Filtre";
 }
 
 <div class="container">
     <br />
-    <div class="row">
-        <!-- Slider -->
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                
-            @Html.Action("Slider","Home")
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
+
     <div class="row">
         <div class="col-md-3">
             <br>
             <!-- Filtreleme Kısmı -->
-            @Html.Action("PartialFiltre","Home")
-            
+            @Html.Action("PartialFiltre", "Home")
+
         </div>
         @foreach (var item in Model)
         {
@@ -60,3 +44,4 @@
 
     </div>
 </div>
+
