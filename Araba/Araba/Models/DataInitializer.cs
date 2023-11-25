@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace Araba.Models
 {
-    public class DataInitializer : DropCreateDatabaseAlways<DataContext>
+    public class DataInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {

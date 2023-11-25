@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -54,6 +55,27 @@ namespace Araba.Controllers
             ViewBag.DurumId = new SelectList(db.Durums, "DurumId", "DurumAd");
             ViewBag.SehirId = new SelectList(db.Sehirs, "SehirId", "SehirAd");
             return View();
+        }
+        public ActionResult Images(int id)
+        {
+            var ilan = db.Ilans.Where(i => i.IlanId == id).ToList();
+            var rsm = db.Resims.Where(i => i.IlanId == id).ToList();
+            ViewBag.rsm = rsm;
+            ViewBag.ilan = ilan;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Images(int id,HttpPostedFileBase file)
+        {
+            string path = Path.Combine("/Content/images/" + file.FileName);
+            file.SaveAs(Server.MapPath(path));
+            Resim rsm = new Resim();
+            rsm.ResimAd = file.FileName.ToString();
+            rsm.IlanId = id;
+            db.Resims.Add(rsm);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: Ilan/Create
