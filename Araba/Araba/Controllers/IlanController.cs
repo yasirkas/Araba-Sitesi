@@ -69,13 +69,17 @@ namespace Araba.Controllers
         [HttpPost]
         public ActionResult Images(int id,HttpPostedFileBase file)
         {
-            string path = Path.Combine("/Content/images/" + file.FileName);
-            file.SaveAs(Server.MapPath(path));
-            Resim rsm = new Resim();
-            rsm.ResimAd = file.FileName.ToString();
-            rsm.IlanId = id;
-            db.Resims.Add(rsm);
-            db.SaveChanges();
+            if (file!=null)
+            {
+                string path = Path.Combine("/Content/images/" + file.FileName);
+                file.SaveAs(Server.MapPath(path));
+                Resim rsm = new Resim();
+                rsm.ResimAd = file.FileName.ToString();
+                rsm.IlanId = id;
+                db.Resims.Add(rsm);
+                db.SaveChanges();
+            }
+            
             return RedirectToAction("Index");
         }
 
