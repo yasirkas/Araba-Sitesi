@@ -20,6 +20,17 @@ namespace Araba.Controllers
             var ilan = db.Ilans.Include(m => m.Model).ToList();
             return View(ilan);
         }
+        public ActionResult Search(string q)
+        {
+            var img = db.Resims.ToList();
+            ViewBag.imgs = img;
+            var ara = db.Ilans.Include(m => m.Model);
+            if (!String.IsNullOrEmpty(q))
+            {
+                ara = ara.Where(i => i.Aciklama.Contains(q) || i.Model.ModelAd.Contains(q));
+            }
+            return View(ara.ToList());
+        }
         public ActionResult Detay(int id)
         {
             var ilan = db.Ilans.Where(i => i.IlanId == id).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).Include(m => m.Model).FirstOrDefault();

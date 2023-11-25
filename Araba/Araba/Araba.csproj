@@ -232,6 +232,8 @@
     <Content Include="Views\Ilan\Index.cshtml" />
     <Content Include="Views\Shared\ModelPartial.cshtml" />
     <Content Include="Views\Ilan\Images.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Shared\Arama.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
