@@ -135,11 +135,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\hakkimizda\style.css" />
     <Content Include="Content\images\car-repair.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons\facebook.png" />
+    <Content Include="Content\images\icons\githublogo.png" />
     <Content Include="Content\images\icons\instagram.png" />
-    <Content Include="Content\images\icons\twitter.png" />
+    <Content Include="Content\images\icons\x.png" />
     <Content Include="Content\images\ilanphoto.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\mcqueen.jpg" />
@@ -147,6 +149,7 @@
     <Content Include="Content\images\q2.jpg" />
     <Content Include="Content\images\successicon.png" />
     <Content Include="Content\images\turkey.png" />
+    <Content Include="Content\images\yasirphoto.jpg" />
     <Content Include="Content\Page404\css\style.css" />
     <Content Include="Content\Page404\img\bg.jpg" />
     <Content Include="Content\Page404\index.html" />
@@ -178,6 +181,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DurumController.cs" />
+    <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
     <Compile Include="Controllers\MarkaController.cs" />
@@ -257,6 +261,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\IlanListesi.cshtml" />
     <Content Include="Views\Home\Page404.cshtml" />
+    <Content Include="Views\Hakkimizda\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
