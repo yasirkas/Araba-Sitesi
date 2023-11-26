@@ -69,8 +69,9 @@ namespace Araba.Controllers
             if (!String.IsNullOrEmpty(q))
             {
                 ara = ara.Where(i => i.Aciklama.Contains(q) || i.Model.ModelAd.Contains(q) || i.Model.Marka.MarkaAd.ToLower().Contains(q));
+                return View(ara.ToList());
             }
-            return View(ara.ToList());
+            return Redirect(Request.UrlReferrer.PathAndQuery);
         }
         public ActionResult Detay(int id)
         {
