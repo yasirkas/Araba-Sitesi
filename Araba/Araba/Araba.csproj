@@ -147,6 +147,9 @@
     <Content Include="Content\images\q2.jpg" />
     <Content Include="Content\images\successicon.png" />
     <Content Include="Content\images\turkey.png" />
+    <Content Include="Content\Page404\css\style.css" />
+    <Content Include="Content\Page404\img\bg.jpg" />
+    <Content Include="Content\Page404\index.html" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -253,6 +256,7 @@
     <Content Include="Views\Home\MenuFiltre.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\IlanListesi.cshtml" />
+    <Content Include="Views\Home\Page404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

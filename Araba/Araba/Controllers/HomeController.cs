@@ -22,6 +22,12 @@ namespace Araba.Controllers
             var ilan = db.Ilans.Include(m => m.Model).ToList().ToPagedList(sayfa,3);
             return View(ilan);
         }
+        public ActionResult Page404()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
         public ActionResult MenuFiltre(int id)
         {
             var imgs = db.Resims.ToList();
