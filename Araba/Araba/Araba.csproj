@@ -135,13 +135,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\car-repair.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons\facebook.png" />
     <Content Include="Content\images\icons\instagram.png" />
     <Content Include="Content\images\icons\twitter.png" />
+    <Content Include="Content\images\ilanphoto.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\mcqueen.jpg" />
     <Content Include="Content\images\q1.jpg" />
     <Content Include="Content\images\q2.jpg" />
+    <Content Include="Content\images\successicon.png" />
+    <Content Include="Content\images\turkey.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -168,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup1.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DurumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
@@ -245,6 +251,8 @@
     <Content Include="Views\Home\Filtre.cshtml" />
     <Content Include="Views\Durum\DurumList.cshtml" />
     <Content Include="Views\Home\MenuFiltre.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\IlanListesi.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <br />
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/Index">Admin Sayfası</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ana Sayfa</li>
+            </ol>
+        </nav>
+        <div class="col-md-2">
+            <div class="img-thumbnail">
+                <br />
+                <img src="~/Content/images/ilanphoto.png" width="130" height="80" style="margin:0 auto;display:flex" />
+                <br />
+                <p style="text-align:center">@Html.ActionLink("İlan Listesi", "IlanListesi", "Admin", null, new { @class = "btn btn-primary" })</p>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="img-thumbnail">
+                <br />
+                <img src="~/Content/images/turkey.png" width="130" height="80" style="margin:0 auto;display:flex" />
+                <br />
+                <p style="text-align:center">@Html.ActionLink("Şehir Listesi", "Index", "Sehir", null, new { @class = "btn btn-primary" })</p>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="img-thumbnail">
+                <br />
+                <img src="~/Content/images/successicon.png" width="130" height="80" style="margin:0 auto;display:flex" />
+                <br />
+                <p style="text-align:center">@Html.ActionLink("Durum Listesi", "Index", "Durum", null, new { @class = "btn btn-primary" })</p>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="img-thumbnail">
+                <br />
+                <img src="~/Content/images/car-repair.png" width="130" height="80" style="margin:0 auto;display:flex" />
+                <br />
+                <p style="text-align:center">@Html.ActionLink("Marka Listesi", "Index", "Marka", null, new { @class = "btn btn-primary" })</p>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="img-thumbnail">
+                <br />
+                <img src="~/Content/images/mcqueen.jpg" width="130" height="80" style="margin:0 auto;display:flex" />
+                <br />
+                <p style="text-align:center">@Html.ActionLink("Model Listesi", "Index", "Model", null, new { @class = "btn btn-primary" })</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+

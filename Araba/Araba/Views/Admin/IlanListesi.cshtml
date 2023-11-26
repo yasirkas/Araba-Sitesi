@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Araba.Models.Ilan>
+@{
+    ViewBag.Title = "IlanListesi";
+}
+
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Admin/Index">Admin Sayfası</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">İlan Listesi</li>
+                </ol>
+            </nav>
+            <div class="img-thumbnail">
+                <br />
+                <table class="table">
+                    <tr>
+
+                        <th>
+                            Kullanıcı Adı
+                        </th>
+                        <th>
+                            Marka
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Durum
+                        </th>
+
+                        <th>
+                            Şehir
+                        </th>
+
+                        <th>
+                            Fiyat
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <label class="btn btn-success">@item.Username</label>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model.Marka.MarkaAd)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model.ModelAd)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Durum.DurumAd)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sehir.SehirAd)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fiyat)
+                        </td>
+
+
+                        <td>
+                            <a class="btn btn-danger " href="/Ilan/Delete/@item.IlanId"><i class="bi bi-trash"></i>  Sil</a>
+                        </td>
+                    </tr>
+                    }
+
+                </table>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
