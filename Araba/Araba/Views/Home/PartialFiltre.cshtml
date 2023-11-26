@@ -22,7 +22,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-4 col-form-label">Şehir :</label>
                     <div class="col-sm-8">
-                        @Html.DropDownList("SehirId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.DropDownList("SehirId", null,"Şehir Seç",htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.SehirId, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-4 col-form-label">Durum :</label>
                     <div class="col-sm-8">
-                        @Html.DropDownList("DurumId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.DropDownList("DurumId", null, "Durum Seç" ,htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.DurumId, "", new { @class = "text-danger" })
                     </div>
                 </div>

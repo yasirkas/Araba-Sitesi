@@ -31,7 +31,7 @@ namespace Araba.Controllers
             return View(filtre);
         }
 
-        public ActionResult Filtre(int min, int max, int sehirid, int durumid, int markaid, int modelid)
+        public ActionResult Filtre(int? min, int? max, int? sehirid, int? durumid, int? markaid, int? modelid)
         {
             var imgs = db.Resims.ToList();
             ViewBag.imgs = imgs;
@@ -41,6 +41,57 @@ namespace Araba.Controllers
              && i.DurumId == durumid
              && i.MarkaId == markaid
              && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).ToList();
+
+            if (min == null && max == null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= 0
+             && i.Fiyat <= 10000000
+             && i.SehirId == sehirid
+             && i.DurumId == durumid
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).ToList();
+            }
+            if (min != null && max == null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= min
+             && i.Fiyat <= 10000000
+             && i.SehirId == sehirid
+             && i.DurumId == durumid
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).ToList();
+            }
+            if (max != null && min == null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= 0
+             && i.Fiyat <= max
+             && i.SehirId == sehirid
+             && i.DurumId == durumid
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).Include(m => m.Sehir).ToList();
+            }
+            if (max == null && min == null && sehirid==null && durumid==null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= 0
+             && i.Fiyat <= 10000000
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).ToList();
+            }
+            if (max == null && min == null && sehirid != null && durumid == null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= 0
+             && i.Fiyat <= 10000000
+             && i.SehirId == sehirid
+             && i.MarkaId == markaid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Sehir).ToList();
+            }
+            if (max == null && min == null && sehirid == null && durumid != null)
+            {
+                filtre = db.Ilans.Where(i => i.Fiyat >= 0
+             && i.Fiyat <= 10000000
+             && i.MarkaId == markaid
+             && i.DurumId == durumid
+             && i.ModelId == modelid).Include(m => m.Model).Include(m => m.Durum).ToList();
+            }
             return View(filtre);
         }
         public PartialViewResult PartialFiltre()
