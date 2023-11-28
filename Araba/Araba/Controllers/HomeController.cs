@@ -28,11 +28,11 @@ namespace Araba.Controllers
             Response.TrySkipIisCustomErrors = true;
             return View();
         }
-        public ActionResult MenuFiltre(int id)
+        public ActionResult MenuFiltre(int id,int sayfa=1)
         {
             var imgs = db.Resims.ToList();
             ViewBag.imgs = imgs;
-            var filtre = db.Ilans.Where(i => i.DurumId == id).Include(m => m.Model).Include(m => m.Sehir).Include(m => m.Durum).ToList();
+            var filtre = db.Ilans.Where(i => i.DurumId == id).Include(m => m.Model).Include(m => m.Sehir).Include(m => m.Durum).OrderBy(i => i.DurumId == id).Include(m => m.Model).Include(m => m.Sehir).Include(m => m.Durum).ToPagedList(sayfa,3);
 
             return View(filtre);
         }

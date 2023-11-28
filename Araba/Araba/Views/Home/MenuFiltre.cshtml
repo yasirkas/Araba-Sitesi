@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Araba.Models.Ilan>
+﻿@model PagedList<Araba.Models.Ilan>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "MenuFiltre";
 }
@@ -41,6 +43,7 @@
                 </div>
             </div>
         }
+        @Html.PagedListPager(Model, sayfa => Url.Action("MenuFiltre", new { sayfa }))
 
     </div>
 </div>
